@@ -1,0 +1,105 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 9, 2014, 7:27:30 PM
+    Author     : BMX
+*/
+h3 {
+    text-transform: uppercase;
+}
+
+body {
+    color:#575757;
+    font: normal 100% Tahoma;
+    margin:3px;
+}
+
+table {
+    background-color: #3498db;
+    border:0;
+    border-spacing: 1px;
+    width:500px;
+}
+
+th, td {
+    background-color: white;
+    padding:5px;
+}
+
+th {
+    background-color: #3498db;
+    color:white;
+}
+
+/****************STYLES FOR FACELET EXAMPLE********************/
+
+#wrapper {
+    width:1000px;
+    margin:0 auto;
+}
+
+.header ul {
+    list-style: none;
+    clear:both;
+}
+
+.header ul li {
+    display: inline;
+    margin-right: 50px;
+    text-transform: uppercase;
+}
+
+#teaEach {
+    width:220px;
+    float:left;
+    font-size: 12px;
+    padding:14px;
+    text-transform: lowercase;
+}
+
+.price, .addToBag {
+    width:50%;
+    float:left;
+}
+
+.addToBag {
+    text-align: right;
+    text-transform:none;
+}
+
+.added {
+    color:#e74c3c;
+    font-weight: bold;
+}
+
+#myBag {
+    width:30%;
+    float: right;
+    text-align: right;
+    font-size:11px;
+    margin-right: 20px;
+}
+
+.specialOffer {
+    font-style: italic;
+}
+
+.promotionLabel, .promotionInput, .promotionErrorMessage {
+    width: 200px;
+    float:left;
+    clear:both;
+    margin-bottom:10px;
+}
+
+.promotionInput, .promotionErrorMessage {
+    clear:none;
+}
+
+.promotionErrorMessage {
+    width:auto;
+    color:red;
+    font-size: 0.75em;//12 / 16 = 3/4 = 0.75
+}

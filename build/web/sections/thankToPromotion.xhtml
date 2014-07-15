@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:corejsf="http://corejsf.com/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+   <head><title>IGNORED</title></head>  
+   <body>        
+      <ui:composition>
+          <h3>Dear #{tea.customer.name}</h3>
+          <p>Thank you for registering special promotion, 
+              you will receive special offers at the email address you entered:</p>
+          
+          <br />Email: <strong>#{tea.customer.email}</strong>
+          <br />Date of birth: <strong>#{tea.customer.dateOfBirth}</strong>
+          <br />Street address: <strong>#{tea.customer.streetAddress}</strong>
+          <br />State: <strong>#{tea.customer.state}</strong>
+          <br />Zip: <strong>#{tea.customer.zip}</strong>
+          <br />Age: <strong>#{tea.customer.age}</strong>
+          
+      </ui:composition>
+   </body>
+</html> 

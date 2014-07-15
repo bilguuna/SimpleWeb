@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Tea application</title>
+        <h:outputStylesheet library="css" name="styles.css" />
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                <h3>Your bill:</h3>
+                <h:dataTable value="#{tea.selectedTeas}" var="teaEach">
+                    <h:column>
+                       <f:facet name="header">
+                          <h:outputText value="Name" style="font-weight: bold" />
+                       </f:facet>
+                        <h:outputText value="#{teaEach.name}" />
+                    </h:column>
+                    <h:column>
+                       <f:facet name="header">
+                          <h:outputText value="Price" style="font-weight: bold"/>
+                       </f:facet>
+                        <h:outputText value="#{teaEach.price}"/>
+                    </h:column>
+                    <h:column>
+                       <f:facet name="header">
+                          <h:outputText value="Qty" style="font-weight: bold"/>
+                       </f:facet>
+                       <h:outputText value="#{teaEach.qty}"/> 
+                    </h:column>
+                    <h:column>
+                       <f:facet name="header">
+                          <h:outputText value="Amount" style="font-weight: bold"/>
+                       </f:facet>
+                        <h:outputText value="#{teaEach.totalPrice}" rendered="#{teaEach.select}"/> 
+                    </h:column>
+                 </h:dataTable>
+                <p>TOTAL AMOUNT : #{tea.totalAmount} </p>
+                <!--<p><h:commandButton action=""</p>-->
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+

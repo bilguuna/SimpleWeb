@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:corejsf="http://corejsf.com/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+   <head><title>IGNORED</title></head>  
+   <body>        
+      <ui:composition>
+          <h3>REGISTRATION FOR SPECIAL PROMOTION</h3>
+        <h:form>
+            <h:outputText styleClass="promotionLabel" value="Name:"/> 
+            <h:inputText styleClass="promotionInput" id="name" required="true" value="#{tea.customer.name}" />
+            <h:message for="name" styleClass="promotionErrorMessage" />
+            
+            <h:outputText styleClass="promotionLabel" value="Email address:" />
+            <h:inputText styleClass="promotionInput" id="email" required="true" value="#{tea.customer.email}"  />
+            <h:message for="email" styleClass="promotionErrorMessage" />
+            
+            <h:outputText styleClass="promotionLabel" value="Date of birth:"/>
+            <h:inputText styleClass="promotionInput" id="dateOfBirth" value="#{tea.customer.dateOfBirth}" >
+                <f:convertDateTime pattern="MM/dd/yyy" />
+            </h:inputText>
+            <h:message for="dateOfBirth" styleClass="promotionErrorMessage" />
+            
+            <h:outputText styleClass="promotionLabel" value="Street address:"/>
+            <h:inputText styleClass="promotionInput" id="street" value="#{tea.customer.streetAddress}"  />
+            
+            <h:outputText styleClass="promotionLabel" value="State:"/>
+            <h:inputText styleClass="promotionInput" id="state" validatorMessage="State code must be 2 character" value="#{tea.customer.state}" >
+                <f:validateLength maximum="2" minimum="2" />
+            </h:inputText>
+            <h:message for="state" styleClass="promotionErrorMessage" />
+            
+            <h:outputText styleClass="promotionLabel" value="Zip:"/>
+            <h:inputText styleClass="promotionInput" id="zip" value="#{tea.customer.zip}"  />
+            
+            <h:outputText styleClass="promotionLabel" value="Age:"/>
+            <h:inputText styleClass="promotionInput" id="age" value="#{tea.customer.age}"  >
+                <f:validateLongRange maximum="110" minimum="10" />
+            </h:inputText>
+            <h:message for="age" styleClass="promotionErrorMessage" />
+            
+            <h:commandButton value="Submit" action="#{tea.setSelectedPageFromAction('thankToPromotion')}" styleClass="promotionLabel" />
+            <h:commandButton value="Cancel" action="#{tea.setSelectedPageFromAction('mainContent')}" styleClass="promotionInput" immediate="true" />
+        </h:form>
+      </ui:composition>
+   </body>
+</html> 

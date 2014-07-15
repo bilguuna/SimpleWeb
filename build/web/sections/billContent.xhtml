@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:corejsf="http://corejsf.com/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+   <head><title>IGNORED</title></head>  
+   <body>        
+      <ui:composition>    
+         <f:view>
+            <h:form>
+                <h3>Your bill:</h3>
+                <h:dataTable value="#{tea.addedTeas}" var="teaEach">
+                    <h:column>
+                       <f:facet name="header">
+                          <h:outputText value="Name" style="font-weight: bold" />
+                       </f:facet>
+                        <h:outputText value="#{teaEach.name}" />
+                    </h:column>
+                    <h:column>
+                       <f:facet name="header">
+                          <h:outputText value="Price" style="font-weight: bold"/>
+                       </f:facet>
+                        <h:outputText value="#{teaEach.price}"/>
+                    </h:column>
+                    <h:column>
+                       <f:facet name="header">
+                          <h:outputText value="Qty" style="font-weight: bold"/>
+                       </f:facet>
+                       <h:inputText value="#{teaEach.qty}" rendered="#{teaEach.select}" size="3" onkeyup="submit()">
+                           <f:validateLongRange minimum="0" maximum="1000" />
+                       </h:inputText> 
+                    </h:column>
+                    <h:column>
+                       <f:facet name="header">
+                          <h:outputText value="Amount" style="font-weight: bold"/>
+                       </f:facet>
+                        <h:outputText value="#{teaEach.totalPrice}" rendered="#{teaEach.select}"/> 
+                    </h:column>
+                 </h:dataTable>
+                <p>TOTAL AMOUNT : #{tea.totalAmount} </p>
+            </h:form>
+        </f:view>	    
+      </ui:composition>
+   </body>
+</html> 
